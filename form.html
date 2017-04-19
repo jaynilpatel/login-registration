@@ -11,7 +11,7 @@
 				height: 100%;
 				
 				background: 
-					linear-gradient(rgba(255, 94, 94, 0.6), rgba(183, 255, 97, 0.6));
+					linear-gradient(rgba(255, 94, 94, 0.6), rgba(148, 255, 19, 0.6));
 			}
 
 			body {
@@ -62,18 +62,23 @@
 			#collegeForm .action-button:hover, #collegeForm .action-button:focus {
 				box-shadow: 0 0 0 2px white, 0 0 0 3px #27AE60;
 			}
+			.fs-header{
+				font-size: 35px;
+				color: #fff;
+				margin-top: 20px;
+			}
 			.fs-title {
-				font-size: 15px;
-				text-transform: uppercase;
+				font-size: 20px;
 				color: #2C3E50;
 				margin-bottom: 10px;
 			}
 			.fs-subtitle {
 				font-weight: normal;
-				font-size: 13px;
+				font-size: 17px;
 				color: #666;
 				margin-bottom: 20px;
 			}
+			
 			#progressbar {
 				margin-bottom: 30px;
 				overflow: hidden;
@@ -83,7 +88,7 @@
 				list-style-type: none;
 				color: white;
 				text-transform: uppercase;
-				font-size: 9px;
+				font-size: 11px;
 				width: 33.33%;
 				float: left;
 				position: relative;
@@ -116,15 +121,18 @@
 			#progressbar li.active:before,  #progressbar li.active:after{
 				background: #27AE60;
 				color: white;
+				font-size:18px;
+				padding:2px;
 			}
 
 					</style>
 				</head>
 				<body>
+				<center><h1 class="fs-header">Sign Up</h1></center>
 			<form id="collegeForm" action="#">
 			  <ul id="progressbar">
 				<li class="active">Account Setup</li>
-				<li>College Info.</li>
+				<li>Branch Info.</li>
 				<li>Personal Details</li>
 			  </ul>
 			  <fieldset>
@@ -136,7 +144,7 @@
 				<input type="button" name="next" class="next action-button" value="Next" />
 			  </fieldset>
 			  <fieldset>
-				<h2 class="fs-title">College Info.</h2>
+				<h2 class="fs-title">Branch Info.</h2>
 				<h3 class="fs-subtitle">Step 2</h3>
 				<input type="text" name="branch" placeholder="Dept." required/>
 				<input type="text" name="ID" placeholder="ID No." required/>
@@ -169,7 +177,7 @@
 			next_fs = $(this).parent().next();
 
 			$("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
-
+			$("#progressbar li").eq($("fieldset").index(next_fs)).addClass("change");
 			next_fs.show(); 
 
 			current_fs.animate({opacity: 0}, {
